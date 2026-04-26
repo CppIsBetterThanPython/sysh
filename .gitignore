@@ -1,0 +1,16 @@
+# Ignore testing and build files/directories
+
+*.o
+*.exe
+
+build/
+Build/
+
+debug/
+Debug/
+
+test/
+Test/
+
+testing/
+Testing/
