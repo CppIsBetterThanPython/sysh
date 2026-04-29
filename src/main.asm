@@ -140,8 +140,18 @@ c_parse:
 cat:
 	CALL	open, rsi
 	sub	rsp, 1024
-	CALL	read, rax, rsp, 1024
-	PRINT	rsp
+
+	mov r10, rax
+
+    .loop:
+		CALL	read, r10, rsp, 1024
+		mov	r9, rax
+
+		PRINT	rsp
+
+		cmp	r9, 1024
+		je	.loop
+
 	PRINT	nl
 	add	rsp, 1024
 
